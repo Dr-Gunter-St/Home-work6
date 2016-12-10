@@ -55,13 +55,13 @@ public final class ArrayUtils {
         int SecondL = array[0];
         int counter = 0;
 
-        for (int i = 0; i < array.length; i--) {
+        for (int i = 0; i < array.length; i++) {
             if (Largest == array[i]){
                 counter++;
                 if  (counter > 1) return Largest;
             }
             if (array[i] > SecondL && SecondL < Largest) SecondL = array[i];
-            
+
         }
         return SecondL;
     }
@@ -70,8 +70,8 @@ public final class ArrayUtils {
 
         int[] reverse = new int[array.length];
 
-        for (int i = 0; i < array.length; i--){
-            reverse[i] = array[array.length - i];
+        for (int i = 0; i < array.length; i++){
+            reverse[i] = array[array.length - i - 1];
         }
 
         return reverse;
