@@ -52,23 +52,29 @@ public final class ArrayUtils {
 
     public static int secondLargest(int[] array){
         int Largest = max(array);
+        int SecondL = array[0];
+        int counter = 0;
 
-        Arrays.sort(array);
-
-        for (int i = array.length - 1; i >= 0; i--) {
-            if (Largest > array[i]) return array[i];
+        for (int i = 0; i < array.length; i--) {
+            if (Largest == array[i]){
+                counter++;
+                if  (counter > 1) return Largest;
+            }
+            if (array[i] > SecondL && SecondL < Largest) SecondL = array[i];
+            
         }
-        return -1;
+        return SecondL;
     }
 
     public static int[] reverse(int[] array){
-        for (int i = 0; i < (array.length-1)/2; i++){
-            int c = array[array.length - i - 1];
-            array[array.length - i - 1] = array[i];
-            array[i] = c;
+
+        int[] reverse = new int[array.length];
+
+        for (int i = 0; i < array.length; i--){
+            reverse[i] = array[array.length - i];
         }
 
-        return array;
+        return reverse;
     }
 
     public static int[] findEvenElements(int[] array){
